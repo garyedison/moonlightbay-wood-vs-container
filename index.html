@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moonlight Bay · Wood vs Container</title>
+  <meta name="description" content="Working comparison of Plett wood homes, KDK China factory shell, and Miguel US$80/sf finish for Moonlight Bay de Consejo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --salt: #f4efe6;
+      --sand: #e7dcc8;
+      --lagoon: #2f5d62;
+      --lagoon-ink: #1c3a3d;
+      --teak: #8a5a32;
+      --charcoal: #2a2a28;
+      --cream: #fbf8f2;
+      --line: #d9d0c0;
+      --ok: #2f6b4f;
+      --warn: #9a5b16;
+      --no: #8a3a32;
+      --paper: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.45;
+    }
+    header {
+      background: var(--lagoon-ink);
+      color: var(--salt);
+      padding: 28px 24px 36px;
+    }
+    header .wrap, main, footer .wrap { max-width: 1180px; margin: 0 auto; }
+    .kicker {
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 11px;
+      opacity: .8;
+    }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 550; margin: 0 0 .4em; }
+    h1 { font-size: clamp(28px, 4vw, 46px); line-height: 1.1; }
+    h2 { font-size: 26px; color: var(--lagoon-ink); }
+    header p { max-width: 720px; color: var(--sand); }
+    .banner {
+      background: #c9a227;
+      color: #1c1608;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 24px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 18px;
+    }
+    nav a { color: var(--sand); font-size: 14px; }
+    section { padding: 40px 24px; }
+    section.alt { background: var(--paper); }
+    .grid-3, .grid-4 {
+      display: grid;
+      gap: 16px;
+    }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+    }
+    .card .price { font-family: Fraunces, serif; font-size: 30px; color: var(--lagoon); }
+    .card .sub { font-size: 13px; color: #666; }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--sand);
+      margin-bottom: 8px;
+    }
+    .tag.best { background: var(--lagoon); color: white; }
+    .tag.wood { background: #c4a574; }
+    .tag.steel { background: #cfd6d6; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 11px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: var(--lagoon-ink); color: var(--salt); font-weight: 600; position: sticky; top: 0; }
+    tr:nth-child(even) td { background: #faf7f1; }
+    .pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .in { background: #dceee3; color: var(--ok); }
+    .up { background: #f4e2c4; color: var(--warn); }
+    .mig { background: #d7e6e7; color: var(--lagoon-ink); }
+    .out { background: #f3d9d6; color: var(--no); }
+    .ask { background: #eee; color: #555; }
+    .scroll { overflow-x: auto; }
+    .note {
+      font-size: 13px;
+      background: #f3ead6;
+      border-left: 4px solid var(--teak);
+      padding: 12px 14px;
+      margin: 16px 0;
+    }
+    ul.tight { margin: 8px 0 0; padding-left: 18px; }
+    footer {
+      background: var(--lagoon-ink);
+      color: var(--sand);
+      padding: 28px 24px;
+      font-size: 13px;
+    }
+    footer a { color: white; }
+  </style>
+</head>
+<body>
+  <div class="banner">Working draft for review · 28 September 2026 · not a buyer contract · CASA 100 sites were not changed</div>
+  <header>
+    <div class="wrap">
+      <div class="kicker">Moonlight Bay de Consejo · Belize</div>
+      <h1>Wood home vs container villa</h1>
+      <p>Plett Corozal quotes (Belize dollars, converted 2:1) next to the KDK China factory shell and Miguel’s US$80/sf walk-in package. Same lot. Different houses.</p>
+      <nav>
+        <a href="#prices">Prices</a>
+        <a href="#paths">Good / better / best</a>
+        <a href="#materials">Materials matrix</a>
+        <a href="#miguel">Miguel $80/sf</a>
+        <a href="#notes">Do not stack</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="prices">
+      <h2>Headline prices — house only, no lot</h2>
+      <p class="sub">Plett invoices in Belize dollars and already includes 12.5% GST. KDK and Miguel are USD. Official rate BZD 2 = USD 1.</p>
+      <div class="grid-4" style="margin-top:18px">
+        <article class="card">
+          <span class="tag wood">Wood · Good</span>
+          <h3>Plett 30×40</h3>
+          <div class="price">US$75,427</div>
+          <div class="sub">BZD $150,854 · 3 bed / 2 bath · 1,200 sf · metal siding promo</div>
+          <p>Delivered Corozal on posts. PVC interiors. Transport / posts / windows showed $0 on the 28 Jul promo — confirm Consejo before selling this number.</p>
+        </article>
+        <article class="card">
+          <span class="tag wood">Wood · Better</span>
+          <h3>Plett 20×40</h3>
+          <div class="price">US$92,826</div>
+          <div class="sub">BZD $185,652 · 2 bed / 2 bath · 800 sf · treated pine</div>
+          <p>Granite vanities, two tile showers on site, french doors, spray foam, granite counters. Closest size to the Hip Cottage.</p>
+        </article>
+        <article class="card">
+          <span class="tag wood">Wood · Best</span>
+          <h3>Plett 20×60</h3>
+          <div class="price">US$122,782</div>
+          <div class="sub">BZD $245,565 · 4 bed / 2 bath · 1,200 sf · treated pine</div>
+          <p>Cathedral stained pine ceiling, Formica kitchen + island, two site-built verandas (8×30 and 6×16), spray foam.</p>
+        </article>
+        <article class="card">
+          <span class="tag steel">Container Path 2</span>
+          <h3>Shell + Miguel</h3>
+          <div class="price">US$89k–$130k</div>
+          <div class="sub">Landed box + US$80/sf · 581–768 sf · unfurnished walk-in</div>
+          <p>Lot 127: landed $37,500 + 646 sf × $80 = $51,680 → <strong>~$89,180</strong>. Lot 115 class: landed ~$68,000 + 768 sf × $80 = $61,440 → <strong>~$129,440</strong>.</p>
+        </article>
+      </div>
+      <div class="grid-3" style="margin-top:16px">
+        <article class="card">
+          <span class="tag steel">Factory shell only</span>
+          <h3>KDK / China FOB–landed</h3>
+          <p>Lot 127 stacked PT190249 landed <strong>US$37,500</strong> (1.5 × 40HQ). Lot 115 class landed about <strong>US$68,000</strong>. CASA campaign FOB list is $17,435–$25,850 — that is a 100-home government price, not a one-off Consejo villa.</p>
+        </article>
+        <article class="card">
+          <span class="tag best">Container Best</span>
+          <h3>Furnished villa</h3>
+          <div class="price">US$180–229k</div>
+          <div class="sub">Caribbean Salt FF&E + install + 20 ft DDP</div>
+          <p>Lot 115 spiral furnished $229,075. Hip bungalow $207,225. Pool bungalow / cedar lodge marketing band $232k–$248k. Furniture is the extra, not the box.</p>
+        </article>
+        <article class="card">
+          <span class="tag">USD / sf</span>
+          <h3>Same-dollar test</h3>
+          <ul class="tight">
+            <li>Plett 30×40 promo · $63/sf</li>
+            <li>Plett 20×60 · $102/sf</li>
+            <li>Plett 20×40 · $116/sf</li>
+            <li>Container + Miguel 127 · $138/sf</li>
+            <li>Furnished villa · $270–$298/sf</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="alt" id="paths">
+      <h2>Good / better / best if this goes on a lot flyer</h2>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag wood">Good</span>
+          <h3>Wood value</h3>
+          <p>Plett 30×40 metal / PVC. Biggest floor, lowest dollar — only if Anne re-quotes Consejo without the expired promo zeros.</p>
+        </article>
+        <article class="card">
+          <span class="tag wood">Better</span>
+          <h3>Wood finished 2/2</h3>
+          <p>Plett 20×40 pine. Already has granite and tile showers. Add AC, septic, cistern, appliances if you want it to live like a villa (~US$15–25k extra).</p>
+        </article>
+        <article class="card">
+          <span class="tag best">Best</span>
+          <h3>Container furnished</h3>
+          <p>Keep the $180–229k band for the foreign buyer who wants teak, limewash, and furniture. Do not reuse that band for Plett wood.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="materials">
+      <h2>Materials — three columns</h2>
+      <p>Wood column is what is on the Plett 27–28 July 2026 Corozal quotes. Factory column is the China 40HQ packing list from the 17 Sep 2026 scope audit. Miguel column is his US$80/sf walk-in list on that same sheet.</p>
+      <div class="scroll" style="margin-top:16px">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width:140px">Item</th>
+              <th style="min-width:220px">Plett wood (as quoted)</th>
+              <th style="min-width:240px">KDK China factory shell</th>
+              <th style="min-width:240px">Miguel US$80/sf</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Structure</td>
+              <td>Treated pine siding (20×40, 20×60) or metal promo (30×40). Raised 6×6 posts to 3' floor.</td>
+              <td>HDG 3 mm welded module, AZM100 + PE coat. Steel floor + 18 mm fiber-cement + 1.8 mm PVC. Roof 0.4 mm color steel + 70 mm injected PU.</td>
+              <td>Does not fabricate the box. Sets and finishes it, including two-story.</td>
+            </tr>
+            <tr>
+              <td>Walls</td>
+              <td>Pine or metal outside. Sheetrock + 1 coat primer (20×40/20×60) or PVC paneling (30×40 promo).</td>
+              <td>75 mm TPS exterior sandwich; 50 mm TPS / rock-wool interior sandwich, 0.4 mm steel both faces.</td>
+              <td>Prime and paint the assembled house. Insulation upper and lower — additive foam only, do not re-panel.</td>
+            </tr>
+            <tr>
+              <td>Roof</td>
+              <td>Gable or low-pitch 2×4. 20×40 painted roof extra. Hurricane clips on some quotes.</td>
+              <td>PU sandwich roof in the module. Pitch roof + WPC rail is a separate packing-list option — skip on PT190249 flat roof.</td>
+              <td>No roof type offered. He does not replace the factory roof.</td>
+            </tr>
+            <tr>
+              <td>Insulation</td>
+              <td>Spray foam on outer walls and ceiling (in all three quotes).</td>
+              <td>70 mm PU in roof + TPS / rock wool in wall cassettes.</td>
+              <td>Insulation upper and lower. Only pay extra if his foam is on top of the factory core.</td>
+            </tr>
+            <tr>
+              <td>Windows / doors</td>
+              <td>20×40: 3 double french-door sets. 20×60: French windows + screens, MDF + barn + PVC slider. 30×40 promo windows $0.</td>
+              <td>Steel entry M1. Sandwich interior M2. Aluminum toilet door. PVC sliders + flywire. One large aluminum combined window 2300×2450.</td>
+              <td>Mahogany interior doors (replaces factory M2 / bath door). Windows may be storm-guard louvers or glass sliders — ask so you do not buy a second set.</td>
+            </tr>
+            <tr>
+              <td>Kitchen</td>
+              <td>8' cabinets + sink. 20×40 shaker painted + granite + over-fridge cabinets. 20×60 Formica + large island. 30×40 Formica + small island. No range, no fridge.</td>
+              <td>One 600×1500 base run, stainless sink and faucet. No stone. No uppers on the packing list.</td>
+              <td>Upper and lower cabinets, granite or quartz. Replaces the factory 5 ft run — delete #21 from FOB if Path 2.</td>
+            </tr>
+            <tr>
+              <td>Baths</td>
+              <td>20×40: 2 granite vanities, 2 toilets, 2 tile showers built on site. 20×60: stalls + Formica vanities. 30×40: stall + tub, 2 toilets.</td>
+              <td>Wet module with 2.5 mm anti-slip PVC floor. Toilet in the box. Shower cube (glass door, tray, mixer) is a packing-list accessory.</td>
+              <td>Ceramic tile over the PVC. May swap fixtures and mahogany bath door. Delete the shower cube from FOB if he tiles.</td>
+            </tr>
+            <tr>
+              <td>Floors</td>
+              <td>Wood floor sanded + 3 coats varnish.</td>
+              <td>1.8 mm PVC dry / 2.5 mm anti-slip PVC wet. Optional WPC deck cassette — not used on Lot 127.</td>
+              <td>Ceramic tile. Covers the factory PVC.</td>
+            </tr>
+            <tr>
+              <td>Electrical</td>
+              <td>Recessed lights, outlets, GFI, 220V stubs for AC, breaker box. AC units not in the quote.</td>
+              <td>Prefab LED, switches, sockets, one distribution box, outdoor inlet, cables in roof/wall. No 200 A service, no AC circuits.</td>
+              <td>Implied in walk-in live house: AC circuits, pump circuit. Not a second panel if factory box stays.</td>
+            </tr>
+            <tr>
+              <td>AC</td>
+              <td><span class="pill out">Not included</span> — 220V outlets only.</td>
+              <td><span class="pill out">Not in the shell</span></td>
+              <td><span class="pill mig">Included</span> — AC units in the $80/sf.</td>
+            </tr>
+            <tr>
+              <td>Water / waste</td>
+              <td><span class="pill out">Not included</span> — buyer septic and cistern.</td>
+              <td>Wet-pack pipes to the module edge only. No house water system.</td>
+              <td><span class="pill mig">Included</span> — pressure tank + pump, septic, 500 L catchment.</td>
+            </tr>
+            <tr>
+              <td>Foundation</td>
+              <td>6×6 posts + stairs to 3'. No slab.</td>
+              <td>Not in the shell. House arrives as modules.</td>
+              <td><span class="pill mig">Included</span> — foundation, pad, hurricane anchors, crane for two-story.</td>
+            </tr>
+            <tr>
+              <td>Decks</td>
+              <td>20×60: 8×30 and 6×16 verandas, PVC ceiling, WPC decking, built on site. 30×40: 6×20 veranda. 20×40: none in quote.</td>
+              <td>WPC deck-floor module is a variant, not the Lot 115 teak deck.</td>
+              <td>Teak / Plett deck is extra (Lot 127 optional 400 sf teak ~US$26,700). Not inside $80/sf.</td>
+            </tr>
+            <tr>
+              <td>Paint</td>
+              <td>Exterior siding painted. Interiors primed only (sheetrock quotes).</td>
+              <td>Panels already PE-coated. Exposed steel galvanized, not cream marine enamel.</td>
+              <td>Whole-house prime + high-quality paint (cream marine on steel for the renders).</td>
+            </tr>
+            <tr>
+              <td>Furniture</td>
+              <td><span class="pill out">None</span></td>
+              <td><span class="pill out">None</span> in the shell. Caribbean Salt kit is a separate 20 ft DDP.</td>
+              <td><span class="pill out">None</span> — finish only.</td>
+            </tr>
+            <tr>
+              <td>Delivery / labour</td>
+              <td>Transport to Corozal in 20×40 and 20×60. 50% down, 50% before delivery. Buyer gets permits.</td>
+              <td>FOB China, then ocean + inland. Path 1 fly-in crew US$9,440 / house on a four-home run.</td>
+              <td>He assembles. 2 months then walk-in. Turn the US$9,440 crew OFF — never both.</td>
+            </tr>
+            <tr>
+              <td>Warranty</td>
+              <td>Plett states no warranty on the houses.</td>
+              <td>Factory module QA.</td>
+              <td>Trade workmanship on the $80/sf scope.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="alt" id="miguel">
+      <h2>Miguel US$80/sf — what he actually sells</h2>
+      <p>From the 17 Sep 2026 factory-vs-Miguel audit (30 packing-list lines). $80 × area is the walk-in package on the <em>container</em>, not a second finish on a Plett wood house.</p>
+      <div class="grid-3" style="margin-top:16px">
+        <article class="card">
+          <span class="tag">Keep in the FOB box</span>
+          <h3>Factory still ships</h3>
+          <p>Frames, 75/50 mm wall cassettes, steel entry, factory windows, moldings, module connectors, rubber seals, toilet, prefab electrical in the roof. This is the house. Miguel does not make modules.</p>
+          <p class="sub">Already inside landed $37,500 (127) / ~$68,000 (115).</p>
+        </article>
+        <article class="card">
+          <span class="tag">He replaces</span>
+          <h3>Delete from FOB on Path 2</h3>
+          <p>Kitchen cabinet #21, shower cube if he tiles, sandwich interior doors if mahogany is whole-house, pitch roof #13, WPC deck cassette #3. Shipping those to Belize just to dump them wastes freight.</p>
+        </article>
+        <article class="card">
+          <span class="tag best">Miguel only</span>
+          <h3>Not on any factory line</h3>
+          <p>Pad, anchors, crane, two-story set, septic, 500 L catchment, AC, house water, CBA permits, 2-month finish. This is why $80/sf is a live house, not paint.</p>
+        </article>
+      </div>
+      <div class="scroll" style="margin-top:18px">
+        <table>
+          <thead>
+            <tr>
+              <th>Line</th>
+              <th>Verdict</th>
+              <th>Pay twice?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Steel module frame, TPS walls, PU roof, steel entry, prefab lights</td><td><span class="pill in">In shell</span></td><td>No</td></tr>
+            <tr><td>Interior sandwich door / aluminum bath door</td><td><span class="pill up">Miguel upgrade</span></td><td>No — he replaces with mahogany</td></tr>
+            <tr><td>Kitchen 600×1500 + SS sink</td><td><span class="pill up">Miguel upgrade</span></td><td>No — he replaces with stone kitchen</td></tr>
+            <tr><td>Shower cube</td><td><span class="pill up">Miguel upgrade</span></td><td>Yes if cube ships and he also tiles</td></tr>
+            <tr><td>PVC factory floor</td><td><span class="pill up">Miguel upgrade</span></td><td>No — tile covers it</td></tr>
+            <tr><td>Windows (factory glass + his louvers/sliders)</td><td><span class="pill ask">Ask</span></td><td>Yes if both sets are bought</td></tr>
+            <tr><td>AC, septic, 500 L tank, pad, crane, assembly</td><td><span class="pill mig">Miguel only</span></td><td>Yes if KDK $9,440 crew also flies</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="notes">
+      <h2>Rules for the review</h2>
+      <div class="note">Do not add Miguel’s $80/sf on top of a Plett finished house. Plett already billed cabinets, showers, paint-primer, spray foam, and delivery. Miguel’s rate is the Path 2 finish on a steel module.</div>
+      <div class="note">Do not add the KDK four-worker fly-in (US$9,440) on top of Miguel Path 2. One crew.</div>
+      <div class="note">Plett quotes expired on paper (valid 30 days from 27–28 July 2026). Ask Anne for a Consejo / Moonlight Bay reissue, in Belize dollars, with real transport to the lot. The 30×40 $0 freight/posts/windows is a promo.</div>
+      <div class="note">CASA 100 installed figures ($64k–$89k) are a 100-home government campaign. They do not belong on a one-lot Moonlight Bay flyer unless that is stated.</div>
+      <p>Sources: Plett HQ quotes 20×40 / 30×40 / 20×60 Corozal; factory-vs-Miguel workbook 17 Sep 2026; Lot 115 and Lot 127 working pages. This app is separate from casa100-belize, casa100-belize-v2, moonlightbaywoodhomes, and moonlightbaycontainerhomes.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Moonlight Bay de Consejo · wood vs container working draft · 28 September 2026<br />
+      Review only. Names and lot addresses unchanged from the live Moonlight pages.
+    </div>
+  </footer>
+</body>
+</html>
